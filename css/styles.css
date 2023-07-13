@@ -1,20 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root{
-    /* Color botón - naranja */
+    /* Color botón - naranja - verde */
     --color-accent: #FFA672;
+    --color-accent-secondary: #454734;
     
-    /* Fondo - Blanco */
+    /* Fondo */
     --color-background: #ffffff;
+    --color-background-light: #FFF1EA;
     
     /* Fondo */
     --color-primary: #D6C1B4;
     /* Fondo claro */
     --color-primary-light: #FFE3D3;
   
-    /* Verde del Nav y del Footer */
-    --color-navbar: #5C835B;
+    /* Nav y Footer */
+    --color-navbar: #C0B7AE42;
     --color-footer: #FFE3D3;
+    --color-footer-secondary: #A38A6E;
     
     /* Color formulario - Gris */
     --color-formulario: #E1E1E1;
@@ -43,7 +46,7 @@ body{
 }
 
 header{
-    background: rgba(000, 000, 000, 0.6);
+    background: var(--color-navbar);
     backdrop-filter: blur(2px);
     position: fixed;
     top: 0;
@@ -125,7 +128,7 @@ nav ul li a {
 .menu {
     position: relative;
     z-index: 10;
-    left: -4%;
+    left: -10px;
     transition: all .5s ease-in-out;
 }
 
@@ -193,8 +196,6 @@ nav ul li a {
 #presentacion{
     width: 100%;
     min-height: 100vh;
-    background-image: url(../assets/img/Portada.png);
-    /* background-image: url(../assets/img/Portada-mobile.webp); */
     background-image: url(../assets/img/Portada-mobile.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -257,21 +258,22 @@ nav ul li a {
 /* Sección Bienvenida */
 #bienvenida {
     background-color: var(--color-primary-light);
-    overflow-x: hidden;
+    position: relative;
+    overflow: hidden;
 }
 #bienvenida h2 {
     color: var(--color-text-secondary);
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 #bienvenida p {
     width: 60%;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 #bienvenida .imgCelular {
     position: absolute;
     z-index: 1;
-    top: 75px;
-    right: -160px;
+    top: 100px;
+    right: -190px;
     width: 350px;
 }
 /* Sección Mis Servicios */
@@ -285,24 +287,25 @@ nav ul li a {
     font-size: 30px
 }
 
-.contenedorCards{
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 80%;
+.contenedorCards {
+    white-space: nowrap;
     gap: 0.5rem;
     overflow-x: auto;
     padding: 1.5rem 0;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: inline mandatory;
     width: 100%;
 }
+.contenedorCards ul {
+    white-space: initial;
+}
 
-.card{
+.cardServicios{
+    display: inline-block;
     background: var(--color-primary-light);
     color: var(--color-text-secondary);
     border-radius: 8px;
+    margin-right: 10px;
     padding: 1rem;
-    width: 350px;
+    width: 300px;
     cursor: pointer;
 }
 
@@ -310,56 +313,16 @@ nav ul li a {
     margin-bottom: 1rem;
 }
 
-
-
-/* Galería */
-
-#galeria{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+.contenedorServiciosDesktop {
+    display: none;
 }
 
-#galeria div{
-    height: 100px;
-    background-size: cover;
-    background-position: center center;
-    border-radius: 4px;
-}
-
-#galeria div:hover {
-    transform: scale(1.03);
-    transition: all ease-in-out 0.5s;
-}
-
-.img1 {
-    grid-area: 1 / 1 / 2 / 2;
-    background-image: url(../assets/img/Galería/Rectangle6.png);
-}
-
-.img2 {
-    grid-area: 1 / 2 / 2 / 3;
-    background-image: url(../assets/img/Galería/Rectangle7.png);
-}
-
-.img3 {
-    grid-area: 2 / 1 / 3 / 3;
-    background-image: url(../assets/img/Galería/Rectangle11.png);
-}
-
-.img4 {
-    grid-area: 3 / 1 / 4 / 2;
-    background-image: url(../assets/img/Galería/Rectangle13.png);
-}
-
-.img5 {
-    grid-area: 3 / 2 / 4 / 3;
-    background-image: url(../assets/img/Galería/Rectangle12.png);
-}
 
 /* Sección contacto */
+
+.seguimeRedes {
+    display: none;
+}
 
 #contacto h2 {
     font-size: 24px;
@@ -434,30 +397,69 @@ footer p{
 .copy span {
     display: block;
 }
-
+.iconosContacto-container {
+    display: none !important;
+}
 .infoContacto {
     max-width: 300px;
 }
 
-@media(min-width:350px){
-    .contenedorCards {
-        grid-auto-columns: 95%;
+/* Media Query Tablet */
+@media only screen and (min-width:481px) and (max-width: 960px){
+    .info h1 {
+        font-size: 3rem;
+    }
+    .info h1 span {
+        font-size: 2rem;
+    }
+
+    #presentacion {
+        background-image: url(../assets/img/Portada.png);
+        background-position: center center;
+    }
+
+    #bienvenida {
+        padding: 1rem;
+    }
+    #bienvenida h2 {
+        font-size: 2rem;
+        padding-left: 1rem;
+    }
+    #bienvenida p {
+        font-size: 1rem;
+        padding-left: 1rem;
+    }
+    #bienvenida .imgCelular {
+        top: 40px;
+        right: -150px;
+    }
+
+    .cardServicios {
+        padding: 1rem 2.5rem;
+        width: 350px;
+    }
+
+    .mapa {
+        display: none !important;
     }
 }
 
-
-
-@media(min-width: 576px){
+/* Media Query Desktop */
+@media only screen and (min-width:961px){
+    .menu {
+        display: none;
+    }
     header{
         background: var(--color-navbar);
         display: flex;
         justify-content: space-between;
-        position: sticky;
+        position: fixed;
     }
 
     .nav-desktop {
-        background: transparent;
+        display: flex !important;
         position: relative;
+        background: none;
     }
     
     nav ul li a {
@@ -470,47 +472,88 @@ footer p{
     }
 
 
+    .info {
+        justify-content: center;
+    }
     .info h1 {
-        margin-top:5rem;
-        font-size: 3rem;
+        margin-top: 5rem;
+        font-size: 4.5rem;
     }
 
     .info h1 span {
-        font-size:2rem
+        font-size: 2.5rem;
     }
 
-    .imagenPersona{
-        width: 100%;
-        gap: 2.5rem;
+    #presentacion {
+        background-image: url(../assets/img/Portada.png);
     }
 
-    .imagenPersona img {
-        width: 50%;
-        margin-bottom: 90px;
-    }   
-    
+    #bienvenida {
+        padding: 1rem 3rem;
+        display: flex;
+        justify-content: center;
+    }
+    .bienvenidaContainer {
+        max-width: 1200px;
+        padding-top: 3rem !important;
+    }
 
-    .persona{
-        margin-top:-10%;
+    #bienvenida h2 {
+        font-size: 4rem;
+    }
+    #bienvenida p {
+        font-size: 1.5rem;
+    }
+    #bienvenida .imgCelular {
+        top: 10px;
+        right: -100px;
+        width: 650px;
     }
 
     .contenedorCards{
-        display: flex;
-        max-width: 70%;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2rem;
-        overflow-x: none;
+        display: none;
     }
 
     .card{
         min-width:220px;
     }
 
-    #misServicios{
-        margin-top:0
+    .contenedorServiciosDesktop {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1000px;
+    }
+    .contenedorServiciosDesktop .serviciosContainer {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 6rem;
+    }
+    .contenedorServIzquierda {
+        width: 50%;
+        margin-right: 1rem;
+    }
+    .contenedorServDerecha {
+        width: 50%;
+    }
+    .imgServicios {
+        width: 400px;
     }
 
+    #misServicios{
+        background-color: white;
+        background-color: var(--color-background-light);
+        margin-top:0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #misServicios h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
     .redes{
         justify-content: flex-start;
         padding-bottom: 50px;
@@ -530,12 +573,93 @@ footer p{
         margin-top: 50px;
     }
 
-    .mapa{
-        width: 100%;
-        height: 100%;
-        border-radius:16px;
+    .seguimeRedes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contacto {
+        margin-top: 1rem;
+    }
+    #contacto h2 {
+        font-size: 2rem;
+    }
+    #contacto .seguimeRedes h2 {
+        text-align: start;
+        width: 50%;
+        font-size: 1.75rem;
+        color: var(--color-accent-secondary);
+    }
+    .seguimeRedes h2 span {
+        font-size: 3rem;
+    }
+    .seguimeRedesContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-left: -3rem;
+    }
+    .seguimeRedesContainer a {
+        text-decoration: none;
+        color: var(--color-accent-secondary);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .seguimeRedesContainer a img{
+        width: 40px;
+    }
+
+    .btnEnviar {
+        background: var(--color-accent-secondary);
     }
         
+    .infoContacto {
+        display: none !important;
+    }
+
+    footer {
+        background: var(--color-footer-secondary);
+    }
+    footer h3 {
+        display: none;
+    }
+    footer .iconosContacto-container {
+        display: flex !important;
+		margin-top: 1rem;
+		flex-direction: column;
+		gap: 1rem;
+		margin-left: auto;
+		width: 35%;
+	}
+	footer .iconosContacto-container a{
+		color: white;
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		text-decoration: none;
+        margin-bottom: 5px;
+	}
+	footer .iconosContacto-container a img{
+		width: 24px;
+	}
+	footer .iconosContacto-container a p{
+		display: initial;
+		color: white;
+		margin: 0;
+        text-align: start;
+        font-size: 0.8rem;
+	}
+    .footCont {
+        display: flex;
+    }
+    .footCont .izq, .footCont .der{
+        width: 50%;
+    }
+    .copy {
+        color: white;
+    }
     .copy span {
         display: inline;
     }

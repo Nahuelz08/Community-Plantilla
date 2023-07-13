@@ -10,15 +10,15 @@
 </head>
 <body>
     <header class="d-flex align-items-center py-3 px-4">
-        <div class="menu d-bock d-sm-none">
+        <div class="menu d-bock">
             <div class="menu-btn">
                 <div class="menu-btn__burger"></div>
             </div>
         </div>
         <a href="#presentacion" class="contenedor-logo"><div class="logo">Logo</div></a>
-        <nav class="d-none d-sm-flex justify-content-end p-3 p-sm-0 nav-desktop">
-            <ul class="d-none d-sm-flex justify-content-between align-items-center gap-3 w-sm-100 w-lg-50 mb-0">
-                <li><a href="#">Sobre mi</a></li>
+        <nav class="d-none justify-content-end p-3 p-sm-0 nav-desktop">
+            <ul class="d-none d-md-flex justify-content-between align-items-center gap-3 w-sm-100 w-lg-50 mb-0">
+                <li><a href="#bienvenida">Sobre mi</a></li>
                 <li><a href="#misServicios">Servicios</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
@@ -26,7 +26,7 @@
     </header>
     <nav class="cerrado menu-lateral">
         <ul class="d-flex flex-column justify-content-between gap-3 w-sm-100 w-lg-50 mb-0">
-            <li><a href="#">Sobre mi</a></li>
+            <li><a href="#bienvenida">Sobre mi</a></li>
             <li><a href="#misServicios">Servicios</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
@@ -43,8 +43,8 @@
     </section>
 
     <section id="bienvenida">
-        <div class="w-100 py-4">
-            <div class="px-4 position-relative overflow-hidden">
+        <div class="w-100 py-4 bienvenidaContainer">
+            <div class="ps-4 overflow-hidden">
                 <h2 class="mb-4 fw-bold">¡Hola y bienvenido/a<br>a mi mundo digital!</h2>
                 <p>Como Community Manager, me apasiona crear y mantener comunidades en línea vibrantes. Soy una persona creativa que busca soluciones innovadoras y efectivas. Estoy al tanto de las últimas tendencias en redes sociales y las adapto a las necesidades de mis clientes.</p>
                 <img class="imgCelular" src="./assets/img/mano-celular.png" alt="Mano sosteniendo un smartphone viendo redes sociales">
@@ -53,10 +53,10 @@
     </section>
 
     
-    <section id="misServicios" class="w-100 d-flex flex-column align-items-center py-5 px-3">
-        <h2 class="fw-bold">Mis Servicios</h2>
-        <div class="contenedorCards">
-            <div class="card">
+    <section id="misServicios" class="w-100 py-5">
+        <h2 class="fw-bold px-4 text-center">Mis Servicios</h2>
+        <div class="contenedorCards px-4">
+            <div class="cardServicios">
                 <h3>Manejo de redes</h3>
                 <ul>
                     <li>Creación de estrategias de contenido</li>
@@ -66,7 +66,7 @@
                     <li>Gestión de publicidad en redes sociales</li>
                 </ul>
             </div>
-            <div class="card">
+            <div class="cardServicios">
                 <h3>Diseño gráfico</h3>
                 <ul>
                     <li>Diseño de imágenes para redes sociales</li>
@@ -76,7 +76,7 @@
                     <li>Diseño de plantillas y elementos visuales</li>
                 </ul>
             </div>
-            <div class="card">
+            <div class="cardServicios">
                 <h3>Asesoría de marketing</h3>
                 <ul>
                     <li>Análisis de mercado y competencia</li>
@@ -88,25 +88,89 @@
                 </ul>
             </div>
         </div>
+        <div class="contenedorServiciosDesktop">
+            <div class="serviciosContainer">
+                <div class="contenedorServIzquierda">
+                    <h3>Manejo de redes</h3>
+                    <p>Como Community Manager, ofrezco servicios de administración de redes sociales especializados. Me encargo de gestionar y optimizar tus perfiles en plataformas como Facebook, Instagram, Twitter y LinkedIn. 
+                        <br>Mis servicios incluyen:</p>
+                    <ul>
+                        <li>Creación de estrategias de contenido</li>
+                        <li>Programación y publicación de contenido</li>
+                        <li>Interacción con seguidores</li>
+                        <li>Análisis de métricas y reportes</li>
+                        <li>Gestión de publicidad en redes sociales</li>
+                    </ul>
+                </div>
+                <div class="contenedorServDerecha">
+                    <img class="imgServicios" src="./assets/img/servicio-redes.png" alt="Mujer con tablet manejando redes sociales">
+                </div>
+            </div>
+            <div class="serviciosContainer">
+                <div class="contenedorServIzquierda">
+                    <img class="imgServicios" src="./assets/img/servicio-grafico.png" alt="Persona creando diseños rodeado de paletas de colores">
+                </div>
+                <div class="contenedorServDerecha">
+                    <h3>Diseño gráfico</h3>
+                    <p>Ofrezco servicios especializados para mejorar la presencia visual de tu marca en las redes sociales. Mi objetivo es combinar mi experiencia en gestión de comunidades con mis habilidades en diseño para crear contenido atractivo y de calidad. 
+                        <br>Mis servicios de diseño gráfico incluyen:</p>
+                    <ul>
+                        <li>Diseño de imágenes para redes sociales</li>
+                        <li>Creación de gráficos y banners</li>
+                        <li>Diseño de logotipos y branding</li>
+                        <li>Edición de imágenes</li>
+                        <li>Diseño de plantillas y elementos visuales</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="serviciosContainer">
+                <div class="contenedorServIzquierda">
+                    <h3>Asesoría de marketing</h3>
+                    <p>Ofrezco servicios de asesoría estratégica para ayudarte a potenciar tu presencia en línea. Mi objetivo es colaborar contigo en el desarrollo de una estrategia de marketing efectiva y personalizada para tu negocio. 
+                        <br>Mis servicios incluyen:</p>
+                    <ul>
+                        <li>Análisis de mercado y competencia</li>
+                        <li>Definición de objetivos</li>
+                        <li>Estrategia de contenido</li>
+                        <li>Gestión de campañas publicitarias</li>
+                        <li>Monitorización y análisis de resultados</li>
+                        <li>Optimización de estrategias</li>
+                    </ul>
+                </div>
+                <div class="contenedorServDerecha">
+                    <img class="imgServicios" src="./assets/img/servicio-marketing.png" alt="Dos personas hablando sobre asesoramiento de marketing">
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="contacto" class="py-4 px-3 w-100  container-sm">
         <h2>Contactame</h2>
         <div class="d-sm-grid grilla-mapa">
+            <div class="seguimeRedes">
+                <h2>¡Sigueme en <br>
+                <span>mis redes sociales!</span>
+                </h2>
+                <div class="seguimeRedesContainer">
+                    <a href="#"><img src="./assets/img/icons/instagram2.png" alt="Instagram">NoeDiLoretto</a>
+                    <a href="#"><img src="./assets/img/icons/linkedin2.png" alt="LinkedIn">NoeliaDiLoretto</a>
+                    <a href="#"><img src="./assets/img/icons/facebook2.png" alt="Facebook">NoeDiLoretto</a>
+                    <a href="#"><img src="./assets/img/icons/Twitter2.png" alt="Twitter">@NoeDiLoretto</a>
+                </div>
+            </div>
             <form action="" class="w-100" id="formContact">
                 <label for="nombre">Nombre completo:</label>
-                <input type="text" placeholder="Ej: Juan Cruz Montiel" id="nombre" name="nombre" required>
+                <input type="text" placeholder="Ej: Noe Di Loretto" id="nombre" name="nombre" required>
                 <label for="asunto">Asunto:</label>
                 <input type="text" placeholder="Ej: Presupuesto para..." id="asunto" name="asunto" required>
                 <label for="mail">Email:</label>
-                <input type="email" placeholder="Ej: juanxmonti@hotmail.com" id="mail" name="mail" required>
+                <input type="email" placeholder="Ej: noediloretto@gmail.com" id="mail" name="mail" required>
                 <label for="mensaje">Mensaje:</label>
-                <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Ej: Hola Juan Cruz..." required></textarea>
+                <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Ej: Hola Noe..." required></textarea>
                 <div class="d-flex">
                     <input type="submit" value="Enviar" class="btnEnviar">
                 </div>
             </form>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26274.76979855363!2d-58.405683200000006!3d-34.5954056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1684201838670!5m2!1ses-419!2sar"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="d-none d-sm-block mapa"></iframe>
         </div>
     </section>
 
@@ -121,6 +185,45 @@
             <a href="#"><img src="./assets/img/icons/LinkedIn.png" alt="LinkedIn"></a>
             <a href="#"><img src="./assets/img/icons/Facebook.png" alt="Facebook"></a>
         </div>
+        <section class="iconosContacto-container d-flex justify-content-evenly">
+            <div class="footCont">
+                <div class="izq">
+                    <a href="#" target="_blank">
+                        <img src="./assets/img/icons/Phone3.png" alt="Icono de teléfono" />
+                        <p>1156655896</p>
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="./assets/img/icons/Mail3.png" alt="Icono de email" />
+                        <p>noediloretto@gmail.com</p>
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="./assets/img/icons/Whatsapp3.png" alt="Icono de Whatsapp" />
+                        <p>1156655896</p>
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="./assets/img/icons/Room3.png" alt="Icono de gps" />
+                        <p>
+                        Av. Cordoba y Dr. Martín C. Martinez 00 - Cordón - Montevideo
+                        - Uruguay
+                        </p>
+                    </a>
+                </div>
+                <div class="der">
+                    <a href="#" target="_blank">
+                        <img src="./assets/img/icons/instagram3.png" alt="Icono de Instagram" />
+                        <p>[tu usuario]</p>
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="./assets/img/icons/linkedin3.png" alt="Icono de LinkedIn" />
+                        <p>[tu usuario]</p>
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="./assets/img/icons/facebook3.png" alt="Icono de Facebook" />
+                        <p>[tu usuario]</p>
+                    </a>
+                </div>
+            </div>
+        </section>
         <p class="copy">Creado y diseñado por Ambition c 2022 <span>Todos los derechos reservados</span></p>
     </footer>
     <script src="./js/app.js"></script>
